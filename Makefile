@@ -1,5 +1,11 @@
+CCO=junglecloud-pam.o
+
 CC=gcc
-CFLAGS=-fPIC -fno-stack-protector -lcurl -c
+CFLAGS=-fPIC -fno-stack-protector -o $(CCO) -lcurl -c 
+
+PAMDIR=/lib/security
+PAM=pam_junglecloud.so
+PAMPATH=$(PAMDIR)/$(PAM)
 
 all: requisites compile install
 
@@ -10,7 +16,7 @@ compile:
 	$(CC) $(CFLAGS) junglecloud-pam.c
 
 install:
-	ld -lcurl -x --shared -o /lib/security/junglecloud-pam.so junglecloud-pam.o
+	ld -lcurl -x --shared -o $(PAMPATH) $(CCO)
 
 clean:
 	rm -rf *.o *.so
