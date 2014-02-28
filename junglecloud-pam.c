@@ -62,7 +62,6 @@ int converse( pam_handle_t *pamh, int nargs, struct pam_message **message, struc
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) {
 	int retval;
 	int i;
-
 	
 	/* these guys will be used by converse() */
 	char *pass;
