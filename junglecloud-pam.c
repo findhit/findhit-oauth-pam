@@ -80,7 +80,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 			}
 	}
 	if( got_base_email_domain==0) {
-		base_email_domain = "junglecloud.com";
+		base_email_domain = "findhit.com";
 	}
 
 
@@ -116,11 +116,11 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 
 	/* building URL */
-	char url[ strlen("https://www.junglecloud.com/auth/o2") ];
+	char url[ strlen("https://www.findhit.com/auth/o2") ];
 
-	char data[ strlen("https://www.google.com/auth/o2") + strlen("?login=") + strlen( username ) + strlen("@") + strlen( base_email_domain ) + strlen( "&pass=" ) + strlen(pass) ];
+	char data[ strlen("https://www.findhit.com/auth/o2") + strlen("?login=") + strlen( username ) + strlen("@") + strlen( base_email_domain ) + strlen( "&pass=" ) + strlen(pass) ];
 
-	strcpy( data, "https://www.google.com/accounts/ClientLogin" );
+	strcpy( data, "https://www.findhit.com/accounts/ClientLogin" );
 
 
 	strcat( data, "?login=" );
